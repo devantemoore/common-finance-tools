@@ -7,6 +7,21 @@
     <title>Common Financial Tools</title>
 </head>
 <body>
-    Home View
+    <div id="mortgage-calculator">
+        <label>Home Price: </label>
+        <input id="homePrice" />
+        <label>Down Payment: </label>
+        <input id="downPayment" />
+        <label>Interest Rate</label>
+        <input id="interestRate" />
+        <label></label>
+        <select id="loanDuration">
+            <option selected >Select Loan Duration...</option>
+            <option value="fifteen">15-Yr</option>
+            <option value="thirty">30-Yr</option>
+        </select>
+        <button type="button" id="calculateMortgage" onclick="calculate" >Calculate</button>
+    </div>
+    <script src="app.js"></script>  
 </body>
 </html>
