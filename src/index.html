@@ -11,11 +11,17 @@
     <title>Common Financial Tools</title>
 </head>
 <body>
+    <!-- TODO: 
+        1. Add currency format for inputs
+        2. Add percentage for Down Payment
+        3. Style Monthly Payment label/result
+        4. Add optional inputs (Property Tax, Closing Cost, Insurance) 
+    -->
     <div id="mortgage-calculator">
         <div id="validation"></div>
         <div class="label-input">
             <label for="homePrice">Home Price: </label>
-            <input id="homePrice" type="number"/>
+            <input id="homePrice" type="number" min="0.01" step="0.01"/>
         </div>
         <div class="label-input">
             <label for="downPayment">Down Payment: </label>

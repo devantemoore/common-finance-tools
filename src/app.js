@@ -13,7 +13,7 @@ function calculate() {
         validation.innerText = "Fields cannot be left blank"
         return;
     }
-    if (homePrice < downPayment){
+    if (parseFloat(homePrice) < parseFloat(downPayment)){
         validation.style.color = "red";
         validation.innerText = "How your down payment greater than the home price ???"
     }

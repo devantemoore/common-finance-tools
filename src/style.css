@@ -1,5 +1,6 @@
 *{
     font-family: 'PT Sans', sans-serif;
+    color:rgb(20, 20, 20);
 }
 #mortgage-calculator{
     display: flex;
@@ -7,7 +8,7 @@
 }
 input, select{
     padding: 0.5rem 0.3rem;
-    border: 1px solid gray;
+    border: 1px solid rgb(194, 194, 194);
     border-radius: 5px;
 }
 #mortgage-calculator>.label-input{
