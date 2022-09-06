@@ -1,4 +1,17 @@
+*{
+    font-family: 'PT Sans', sans-serif;
+}
 #mortgage-calculator{
     display: flex;
     flex-direction: column;
+}
+input, select{
+    padding: 0.5rem 0.3rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+#mortgage-calculator>.label-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }

@@ -4,23 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Common Financial Tools</title>
 </head>
 <body>
     <div id="mortgage-calculator">
-        <label for="homePrice">Home Price: </label>
-        <input id="homePrice" type="number"/>
-        <label for="downPayment">Down Payment: </label>
-        <input id="downPayment" type="number"/>
-        <label for="interestRate">Interest Rate</label>
-        <input id="interestRate" type="number"/>
-        <label></label>
-        <select id="loanDuration">
-            <option selected >Select Loan Duration...</option>
-            <option value=15>15-Yr</option>
-            <option value=30>30-Yr</option>
-        </select>
+        <div id="validation"></div>
+        <div class="label-input">
+            <label for="homePrice">Home Price: </label>
+            <input id="homePrice" type="number"/>
+        </div>
+        <div class="label-input">
+            <label for="downPayment">Down Payment: </label>
+            <input id="downPayment" type="number"/>
+        </div>
+        <div class="label-input">
+            <label for="interestRate">Interest Rate</label>
+            <input id="interestRate" type="number"/>
+        </div>
+        <div class="label-input">
+            <label></label>
+            <select id="loanDuration">
+                <option selected value=0 >Select Loan Duration...</option>
+                <option value=15>15-Yr</option>
+                <option value=30>30-Yr</option>
+            </select>
+        </div>
         <button type="button" id="calculateMortgage" onclick="calculate()" >Calculate</button>
         <div id="monthlyPayment"></div>
     </div>
