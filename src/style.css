@@ -1,0 +1,4 @@
+#mortgage-calculator{
+    display: flex;
+    flex-direction: column;
+}
