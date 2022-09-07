@@ -1,6 +1,9 @@
 *{
     font-family: 'PT Sans', sans-serif;
-    color:rgb(20, 20, 20);
+    color:rgb(40, 40, 40);
+    --main-primary: rgb(0, 100, 255);
+    --main-font-color: rgb(40, 40, 40);
+    --secondary-font-color: rgb(255, 255, 255)
 }
 #mortgage-calculator{
     display: flex;
@@ -15,7 +18,7 @@
     /* background-color: cyan; */
 }
 #mortgage-calculator>#paymentBreakdown>.breakdown-item{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(40, 40, 40);;
     padding: 0.5rem 0;
     font-size: 1.25rem;
 }
@@ -32,6 +35,16 @@ input#homePrice{
 }
 input#interestRate{
     flex: 1;
+}
+button.btn{
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    border: 0;
+    border-radius: 4px;
+}
+button.btn.btn-primary{
+    background-color: var(--main-primary);
+    color: var(--secondary-font-color)
 }
 
 
