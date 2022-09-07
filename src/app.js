@@ -27,7 +27,7 @@ function calculate() {
     let loanAmount = homePrice - downPayment
     var principalPlusInterest = loanAmount * ((monthlyInterest*(monthlyInterest + 1)**loanDurationInMonths)/((monthlyInterest + 1)**(loanDurationInMonths) - 1));
 
-    displayCalculation.innerText += " " + currencyFormat(principalPlusInterest.toFixed(2));
+    displayCalculation.innerText += "$ " + currencyFormat(principalPlusInterest.toFixed(2));
 }
 
 function currencyFormat(number){

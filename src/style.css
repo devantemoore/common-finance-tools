@@ -12,7 +12,12 @@
     margin-bottom: 1rem;
 }
 #mortgage-calculator>#paymentBreakdown{
-    background-color: cyan;
+    /* background-color: cyan; */
+}
+#mortgage-calculator>#paymentBreakdown>.breakdown-item{
+    border-bottom: 1px solid black;
+    padding: 0.5rem 0;
+    font-size: 1.25rem;
 }
 input, select{
     padding: 0.5rem 0.3rem;
