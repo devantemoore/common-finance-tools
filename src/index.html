@@ -14,7 +14,7 @@
     <!-- TODO: 
         x. Add currency format for inputs:
         2. Add percentage for Down Payment -> inputs should change each other
-        3. Style Monthly Payment label/result
+        x. Style Principal + Interest Payment label/result
         4. Add optional inputs (Property Tax, Closing Cost, Insurance) 
     -->
     <div id="mortgage-calculator">
@@ -42,7 +42,9 @@
             </select>
         </div>
         <button type="button" id="calculateMortgage" onclick="calculate()" >Calculate</button>
-        <div id="monthlyPayment"></div>
+        <div id="paymentBreakdown" class="p-3">
+            <div id="principalPlusInterest" class="flex justify-content-between"><span>Principal + Interest: </span><span id="principalPlusInterestValue">$ </span></div>
+        </div>
     </div>
     <script src="app.js"></script>  
 </body>

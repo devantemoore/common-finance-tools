@@ -6,6 +6,14 @@
     display: flex;
     flex-direction: column;
 }
+#mortgage-calculator>.label-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+#mortgage-calculator>#paymentBreakdown{
+    background-color: cyan;
+}
 input, select{
     padding: 0.5rem 0.3rem;
     border: 1px solid rgb(194, 194, 194);
@@ -20,11 +28,7 @@ input#homePrice{
 input#interestRate{
     flex: 1;
 }
-#mortgage-calculator>.label-input{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
+
 
 /* flex */
 .flex{
@@ -32,6 +36,9 @@ input#interestRate{
 }
 .flex.flex-column{
     flex-direction: column;
+}
+.flex.justify-content-between{
+    justify-content: space-between;
 }
 .flex.align-items-center{
     align-items: center;
@@ -82,4 +89,111 @@ input#interestRate{
 }
 .mr-5{
     margin-right: 4rem;
+}
+.mx-1{
+    margin: 0 0.25rem;
+}
+.mx-2{
+    margin: 0 0.5rem;
+}
+.mx-3{
+    margin: 0 1rem;
+}
+.mx-4{
+    margin: 0 2rem;
+}
+.mx-5{
+    margin: 0 4rem;
+}
+.my-1{
+    margin: 0.25rem 0;
+}
+.my-2{
+    margin: 0.5rem 0;
+}
+.my-3{
+    margin: 1rem 0;
+}
+.my-4{
+    margin: 2rem 0;
+}
+.my-5{
+    margin: 4rem 0;
+}
+
+/* padding */
+.p-1{
+    margin: 0.25rem;
+}
+.p-2{
+    margin: 0.5rem;
+}
+.p-3{
+    margin: 1rem;
+}
+.p-4{
+    margin: 2rem;
+}
+.p-5{
+    margin: 4rem;
+}
+.pl-1{
+    margin-left: 0.25rem;
+}
+.pl-2{
+    margin-left: 0.5rem;
+}
+.pl-3{
+    margin-left: 1rem;
+}
+.pl-4{
+    margin-left: 2rem;
+}
+.pl-5{
+    margin-left: 4rem;
+}
+.pr-1{
+    margin-right: 0.25rem;
+}
+.pr-2{
+    margin-right: 0.5rem;
+}
+.pr-3{
+    margin-right: 1rem;
+}
+.pr-4{
+    margin-right: 2rem;
+}
+.pr-5{
+    margin-right: 4rem;
+}
+.px-1{
+    margin: 0 0.25rem;
+}
+.px-2{
+    margin: 0 0.5rem;
+}
+.px-3{
+    margin: 0 1rem;
+}
+.px-4{
+    margin: 0 2rem;
+}
+.px-5{
+    margin: 0 4rem;
+}
+.py-1{
+    margin: 0.25rem 0;
+}
+.py-2{
+    margin: 0.5rem 0;
+}
+.py-3{
+    margin: 1rem 0;
+}
+.py-4{
+    margin: 2rem 0;
+}
+.py-5{
+    margin: 4rem 0;
 }
