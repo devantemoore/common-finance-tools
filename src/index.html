@@ -12,8 +12,8 @@
 </head>
 <body>
     <!-- TODO: 
-        1. Add currency format for inputs
-        2. Add percentage for Down Payment
+        x. Add currency format for inputs:
+        2. Add percentage for Down Payment -> inputs should change each other
         3. Style Monthly Payment label/result
         4. Add optional inputs (Property Tax, Closing Cost, Insurance) 
     -->
@@ -21,15 +21,17 @@
         <div id="validation"></div>
         <div class="label-input">
             <label for="homePrice">Home Price: </label>
-            <input id="homePrice" type="number" min="0.01" step="0.01"/>
+            <div class="flex align-items-center">$<input id="homePrice" class="ml-1" type="number" min="0.01" step="0.01"/></div>
         </div>
         <div class="label-input">
             <label for="downPayment">Down Payment: </label>
-            <input id="downPayment" type="number"/>
+            <div class="flex align-items-center">
+                <span>$</span><input id="downPayment" class="ml-1" type="number" min="0.01" step="0.01"/>
+                <input id="percentage" class="mr-1" type="number" placeholder="20"/><span>%</span></div>
         </div>
         <div class="label-input">
-            <label for="interestRate">Interest Rate</label>
-            <input id="interestRate" type="number"/>
+            <label for="interestRate">Interest Rate:</label>
+            <div class="flex align-items-center"><input id="interestRate" class="mr-1" type="number"/><span>%</span></div>
         </div>
         <div class="label-input">
             <label></label>

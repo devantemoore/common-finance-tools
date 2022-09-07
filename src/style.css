@@ -11,8 +11,75 @@ input, select{
     border: 1px solid rgb(194, 194, 194);
     border-radius: 5px;
 }
+input#downPayment{
+    flex: 1;
+}
+input#homePrice{
+    flex: 1;
+}
+input#interestRate{
+    flex: 1;
+}
 #mortgage-calculator>.label-input{
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+}
+
+/* flex */
+.flex{
+    display: flex
+}
+.flex.flex-column{
+    flex-direction: column;
+}
+.flex.align-items-center{
+    align-items: center;
+}
+
+/* margin */
+.m-1{
+    margin: 0.25rem;
+}
+.m-2{
+    margin: 0.5rem;
+}
+.m-3{
+    margin: 1rem;
+}
+.m-4{
+    margin: 2rem;
+}
+.m-5{
+    margin: 4rem;
+}
+.ml-1{
+    margin-left: 0.25rem;
+}
+.ml-2{
+    margin-left: 0.5rem;
+}
+.ml-3{
+    margin-left: 1rem;
+}
+.ml-4{
+    margin-left: 2rem;
+}
+.ml-5{
+    margin-left: 4rem;
+}
+.mr-1{
+    margin-right: 0.25rem;
+}
+.mr-2{
+    margin-right: 0.5rem;
+}
+.mr-3{
+    margin-right: 1rem;
+}
+.mr-4{
+    margin-right: 2rem;
+}
+.mr-5{
+    margin-right: 4rem;
 }
