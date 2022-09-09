@@ -22,6 +22,16 @@
     padding: 0.5rem 0;
     font-size: 1.25rem;
 }
+#mortgage-calculator>#additionalOptions>#additionalOptionsList{
+    position: relative;
+    height: 0;
+    opacity: 0;
+    transition: all 0.4s ease-in-out
+}
+#mortgage-calculator>#additionalOptions>#additionalOptionsList.is-active{
+    height: 100px;
+    opacity: 1;
+}
 input, select{
     padding: 0.5rem 0.3rem;
     border: 1px solid rgb(194, 194, 194);
@@ -36,6 +46,9 @@ input#homePrice{
 input#interestRate{
     flex: 1;
 }
+button{
+    cursor: pointer;
+}
 button.btn{
     font-size: 1rem;
     padding: 0.2rem 1rem;
@@ -45,6 +58,13 @@ button.btn{
 button.btn.btn-primary{
     background-color: var(--main-primary);
     color: var(--secondary-font-color)
+}
+button.dropdown{
+    background-color: white;
+    border: 0;
+    color: var(--main-primary);
+    font:900;
+    font-size: 1rem;
 }
 
 
@@ -57,6 +77,9 @@ button.btn.btn-primary{
 }
 .flex.justify-content-between{
     justify-content: space-between;
+}
+.flex.justify-content-center{
+    justify-content: center;
 }
 .flex.align-items-center{
     align-items: center;
@@ -109,109 +132,156 @@ button.btn.btn-primary{
     margin-right: 4rem;
 }
 .mx-1{
-    margin: 0 0.25rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
 }
 .mx-2{
-    margin: 0 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 .mx-3{
-    margin: 0 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .mx-4{
-    margin: 0 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 .mx-5{
-    margin: 0 4rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 .my-1{
-    margin: 0.25rem 0;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 .my-2{
-    margin: 0.5rem 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .my-3{
-    margin: 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .my-4{
-    margin: 2rem 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .my-5{
-    margin: 4rem 0;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 /* padding */
 .p-1{
-    margin: 0.25rem;
+    padding: 0.25rem;
 }
 .p-2{
-    margin: 0.5rem;
+    padding: 0.5rem;
 }
 .p-3{
-    margin: 1rem;
+    padding: 1rem;
 }
 .p-4{
-    margin: 2rem;
+    padding: 2rem;
 }
 .p-5{
-    margin: 4rem;
+    padding: 4rem;
 }
 .pl-1{
-    margin-left: 0.25rem;
+    padding-left: 0.25rem;
 }
 .pl-2{
-    margin-left: 0.5rem;
+    padding-left: 0.5rem;
 }
 .pl-3{
-    margin-left: 1rem;
+    padding-left: 1rem;
 }
 .pl-4{
-    margin-left: 2rem;
+    padding-left: 2rem;
 }
 .pl-5{
-    margin-left: 4rem;
+    padding-left: 4rem;
 }
 .pr-1{
-    margin-right: 0.25rem;
+    padding-right: 0.25rem;
 }
 .pr-2{
-    margin-right: 0.5rem;
+    padding-right: 0.5rem;
 }
 .pr-3{
-    margin-right: 1rem;
+    padding-right: 1rem;
 }
 .pr-4{
-    margin-right: 2rem;
+    padding-right: 2rem;
 }
 .pr-5{
-    margin-right: 4rem;
+    padding-right: 4rem;
 }
 .px-1{
-    margin: 0 0.25rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 .px-2{
-    margin: 0 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 .px-3{
-    margin: 0 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .px-4{
-    margin: 0 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 .px-5{
-    margin: 0 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 .py-1{
-    margin: 0.25rem 0;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 .py-2{
-    margin: 0.5rem 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 .py-3{
-    margin: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .py-4{
-    margin: 2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 .py-5{
-    margin: 4rem 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Icons */
+.icon{
+    position: absolute;
+    text-align: center;
+    height: 10px;
+    width: 10px;
+    margin: 0 10px;
+}
+.icon.icon-chevron-down{
+    border: 2px solid var(--main-primary);
+    border-bottom: 0;
+    border-right: 0;
+    margin-top: 3px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.icon.icon-chevron-down.rotate-180{
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
 }
