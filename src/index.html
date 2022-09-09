@@ -15,19 +15,20 @@
         x. Add currency format for inputs:
         2. Add percentage for Down Payment -> inputs should change each other
         x. Style Principal + Interest Payment label/result
-        4. Add optional inputs (Property Tax, Closing Cost, Insurance) 
+        x. Add optional inputs (Property Tax, Closing Cost, Insurance) 
     -->
     <div id="mortgage-calculator">
         <div id="validation"></div>
         <div class="label-input">
             <label for="homePrice">Home Price: </label>
-            <div class="flex align-items-center">$<input id="homePrice" class="ml-1" type="number" min="0.01" step="0.01"/></div>
+            <div class="flex align-items-center">$<input id="homePrice" class="ml-1" type="number" min="0" step="100"/></div>
         </div>
         <div class="label-input">
             <label for="downPayment">Down Payment: </label>
             <div class="flex align-items-center">
-                <span>$</span><input id="downPayment" class="ml-1" type="number" min="0.01" step="0.01"/>
-                <input id="percentage" class="mr-1" type="number" placeholder="20"/><span>%</span></div>
+                <span>$</span><input id="downPayment" class="ml-1" type="number" min="0" step="100"/>
+                <input id="percentage" class="mr-1" type="number" placeholder="20"/><span>%</span>
+            </div>
         </div>
         <div class="label-input">
             <label for="interestRate">Interest Rate:</label>
@@ -36,9 +37,9 @@
         <div class="label-input">
             <label></label>
             <select id="loanDuration">
-                <option selected value=0 >Select Loan Duration...</option>
+                <option value=0 >Select Loan Duration...</option>
                 <option value=15>15-Yr</option>
-                <option value=30>30-Yr</option>
+                <option selected value=30>30-Yr</option>
             </select>
         </div>
         <div id="additionalOptions" class="flex flex-column justify-content-center my-2">
