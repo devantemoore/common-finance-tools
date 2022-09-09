@@ -41,7 +41,16 @@
                 <option value=30>30-Yr</option>
             </select>
         </div>
-        <button type="button" id="calculateMortgage" class="btn btn-primary" onclick="calculate()" >Calculate</button>
+        <div id="additionalOptions" class="flex flex-column justify-content-center my-2">
+            <button id="additionalOptionsButton" type="button" class="dropdown">Additional Options (Insurance, HOA, Taxes, etc.)<span class="icon icon-chevron-down"></span></button>
+            <div id="additionalOptionsList" class="px-2 py-3">
+                <div class="flex justify-content-between py-2"><span>Property Tax: </span><input id="propertyTaxValue"></input></div>
+                <div class="flex justify-content-between py-2"><span>Home Insurance: </span><input id="homeInsuranceInput"></input></div>
+                <div class="flex justify-content-between py-2"><span>Mortgage Insurance: </span><input id="mortgageInsuranceValue"></input></div>
+                <div class="flex justify-content-between py-2"><span>Monthly HOA Fee: </span><input id="hoaValue"></input></div>
+            </div>
+        </div>
+        <button type="button" id="calculateMortgage" class="btn btn-primary my-2" onclick="calculate()" >Calculate</button>
         <div id="paymentBreakdown" class="p-3">
             <div id="principalPlusInterest" class="flex justify-content-between breakdown-item"><span>Principal + Interest: </span><span id="principalPlusInterestValue">$ 0</span></div>
             <div id="propertyTax" class="flex justify-content-between breakdown-item"><span>Property Tax: </span><span id="propertyTaxValue">$ 0</span></div>

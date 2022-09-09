@@ -1,5 +1,14 @@
 console.log("hello from app.js")
 
+const additionalOptionsList = document.querySelector('#additionalOptionsList')
+const additionalOptionsButton = document.querySelector('#additionalOptionsButton')
+const chevron = document.querySelector('.icon.icon-chevron-down')
+
+additionalOptionsButton.addEventListener('click', function(){
+    additionalOptionsList.classList.toggle('is-active')
+    chevron.classList.toggle('rotate-180')
+})
+
 function calculate() {    
     var homePrice = document.getElementById("homePrice").value
     var downPayment = document.getElementById("downPayment").value
