@@ -6,10 +6,17 @@ const additionalOptionsButton = document.querySelector('#additionalOptionsButton
 const additionalOptionsList = document.querySelector('#additionalOptionsList')
 const chevron = document.querySelector('.icon.icon-chevron-down')
 const downPayment = document.getElementById("downPayment")
+const hoa = document.querySelector('#hoaValue')
+const homeInsurance = document.querySelector('#homeInsuranceInput')
 const homePrice = document.getElementById("homePrice")
 const interestRate = document.getElementById("interestRate")
 const loanDuration = document.getElementById("loanDuration")
 const percentage = document.querySelector('#percentage')
+const pmi = document.querySelector('#mortgageInsuranceValue')
+const propertyTax = document.querySelector('#propertyTaxValue')
+const result = document.querySelector('#monthlyPayment>#result')
+
+
 
 additionalOptionsButton.addEventListener('click', function(){
     additionalOptionsList.classList.toggle('is-active')
@@ -17,12 +24,33 @@ additionalOptionsButton.addEventListener('click', function(){
 })
 downPayment.addEventListener('change', function() {
     percentage.value = ((downPayment.value / homePrice.value) * 100).toFixed(1);
+    calculate();
+})
+hoa.addEventListener('change', function(){
+    calculate();
+})
+homeInsurance.addEventListener('change', function(){
+    calculate();
 })
 homePrice.addEventListener('change', function(){
     downPayment.value = (homePrice.value * (percentage.value/100)).toFixed(0);
+    calculate();
+})
+interestRate.addEventListener('change', function(){
+    calculate();
+})
+loanDuration.addEventListener('change', function(){
+    calculate();
 })
 percentage.addEventListener('change', function(){
     downPayment.value = (homePrice.value * (percentage.value/100)).toFixed(0);
+    calculate();
+})
+pmi.addEventListener('change', function(){
+    calculate();
+})
+propertyTax.addEventListener('change', function(){
+    calculate();
 })
 
 
@@ -47,14 +75,14 @@ function calculate() {
 
 
     var displayCalculation = document.getElementById("principalPlusInterestValue")
-
     // Monthly Payment = Principal * [ (i/12mo)(i + 1)^LD]/[(1 + i)^n - 1]
     let monthlyInterest = (interestRate.value/100)/12
     let loanDurationInMonths = loanDuration.value*12
     let loanAmount = homePrice.value - downPayment.value
     var principalPlusInterest = loanAmount * ((monthlyInterest*(monthlyInterest + 1)**loanDurationInMonths)/((monthlyInterest + 1)**(loanDurationInMonths) - 1));
-
-    displayCalculation.innerText = "$ " + currencyFormat(principalPlusInterest.toFixed(2));
+    result.innerText = "$ " + currencyFormat((principalPlusInterest + (((propertyTax.value/100)/12)*homePrice.value) + (homeInsurance.value/12) + (pmi.value/12) + (hoa.value/1)).toFixed(2));
+    displayCalculation.innerText = currencyFormat(principalPlusInterest.toFixed(2))
+    //console.log(principalPlusInterest.toFixed(2))
 }
 
 function currencyFormat(number){
@@ -90,4 +118,10 @@ function setDefaultValues(){
     downPayment.defaultValue = 60000;
     interestRate.defaultValue = 6.02; // set to national average
     loanDuration.defaultValue = 30;
+
+    //additional options
+    propertyTax.defaultValue = 0;
+    homeInsurance.defaultValue = 0;
+    pmi.defaultValue = 0;
+    hoa.defaultValue = 0;
 }
