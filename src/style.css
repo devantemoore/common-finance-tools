@@ -20,7 +20,7 @@
 #mortgage-calculator>#paymentBreakdown>.breakdown-item{
     border-bottom: 1px solid rgb(40, 40, 40);;
     padding: 0.5rem 0;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 #mortgage-calculator>#additionalOptions>#additionalOptionsList{
     position: relative;
@@ -44,6 +44,12 @@ input#downPayment{
 }
 input#homePrice{
     flex: 1;
+    border: 0;
+    border-bottom: 1px solid black;    
+}
+input#homePrice:focus{
+    outline: none;
+    border-bottom: 1px solid var(--main-primary);
 }
 input#interestRate{
     flex: 1;
