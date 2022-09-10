@@ -13,7 +13,7 @@
 <body>
     <!-- TODO: 
         x. Add currency format for inputs:
-        2. Add percentage for Down Payment -> inputs should change each other
+        x. Add percentage for Down Payment -> inputs should change each other
         x. Style Principal + Interest Payment label/result
         x. Add optional inputs (Property Tax, Closing Cost, Insurance) 
     -->
@@ -45,10 +45,10 @@
         <div id="additionalOptions" class="flex flex-column justify-content-center my-2">
             <button id="additionalOptionsButton" type="button" class="dropdown">Additional Options (Insurance, HOA, Taxes, etc.)<span class="icon icon-chevron-down"></span></button>
             <div id="additionalOptionsList" class="px-2 py-3">
-                <div class="flex justify-content-between py-2"><span>Property Tax: </span><input id="propertyTaxValue"></input></div>
-                <div class="flex justify-content-between py-2"><span>Home Insurance: </span><input id="homeInsuranceInput"></input></div>
-                <div class="flex justify-content-between py-2"><span>Mortgage Insurance: </span><input id="mortgageInsuranceValue"></input></div>
-                <div class="flex justify-content-between py-2"><span>Monthly HOA Fee: </span><input id="hoaValue"></input></div>
+                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Property Tax: </span>$<input id="propertyTaxValue" class="ml-2"></input></div>
+                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Home Insurance: </span>$<input id="homeInsuranceInput" class="ml-2"></input></div>
+                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Mortgage Insurance: </span>$<input id="mortgageInsuranceValue" class="ml-2"></input></div>
+                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Monthly HOA Fee: </span>$<input id="hoaValue" class="ml-2"></input></div>
             </div>
         </div>
         <button type="button" id="calculateMortgage" class="btn btn-primary my-2" onclick="calculate()" >Calculate</button>

@@ -88,6 +88,9 @@ button.dropdown{
 .flex.align-items-center{
     align-items: center;
 }
+.flex-1{
+    flex: 1;
+}
 
 /* margin */
 .m-1{
