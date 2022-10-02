@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Common Financial Tools</title>
 </head>
@@ -17,26 +18,29 @@
         x. Style Principal + Interest Payment label/result
         x. Add optional inputs (Property Tax, Closing Cost, Insurance) 
         x. get rid of calc button and auto calc
-        6. add additional option values to payment breakdown and total payment/month (refine after)
-        7. make payment breakdown smaller. thinner text (maybe make slide up menu?)
-        8. make some type of attractive visual for total payment/mo
+        x. add additional option values to payment breakdown and total payment/month (refine after)
+        x. make payment breakdown smaller. thinner text (maybe make slide up menu?)
+        x. make some type of attractive visual for total payment/mo
     -->
+    <div class="flex justify-content-end navbar p-3">
+        <div id="hamburger" class="p-0">|||</div>
+    </div>
     <div id="mortgage-calculator">
         <div id="validation"></div>
         <div class="label-input">
             <label for="homePrice">Home Price: </label>
-            <div class="flex align-items-center">$<input id="homePrice" class="ml-1" type="number" min="0" step="100"/></div>
+            <div class="flex align-items-center">$<input id="homePrice" class="ml-1 fs-4" type="number" min="0" step="100"/></div>
         </div>
         <div class="label-input">
             <label for="downPayment">Down Payment: </label>
             <div class="flex align-items-center">
-                <span>$</span><input id="downPayment" class="ml-1" type="number" min="0" step="100"/>
-                <input id="percentage" class="mr-1" type="number" placeholder="20"/><span>%</span>
+                <span>$</span><input id="downPayment" class="ml-1 fs-3" type="number" min="0" step="100"/>
+                <input id="percentage" class="mr-1 fs-3" type="number" style="width:20%;"/><span>%</span>
             </div>
         </div>
         <div class="label-input">
             <label for="interestRate">Interest Rate:</label>
-            <div class="flex align-items-center"><input id="interestRate" class="mr-1" type="number"/><span>%</span></div>
+            <div class="flex align-items-center"><input id="interestRate" class="mr-1 fs-3" type="number"/><span>%</span></div>
         </div>
         <div class="label-input">
             <label></label>
@@ -49,19 +53,36 @@
         <div id="additionalOptions" class="flex flex-column justify-content-center my-2">
             <button id="additionalOptionsButton" type="button" class="dropdown">Additional Options (Insurance, HOA, Taxes, etc.)<span class="icon icon-chevron-down"></span></button>
             <div id="additionalOptionsList" class="px-2 py-3">
-                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Property Tax: </span><input id="propertyTaxValue" class="ml-2" type="number"></input>%</div>
-                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Home Insurance: </span>$<input id="homeInsuranceInput" class="ml-2" type="number">/Yr.</input></div>
-                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Mortgage Insurance: </span>$<input id="mortgageInsuranceValue" class="ml-2" type="number"></input></div>
-                <div class="flex justify-content-between py-2 align-items-center"><span class="flex-1">Monthly HOA Fee: </span>$<input id="hoaValue" class="ml-2" type="number"></input></div>
+                <div class="label-input my-3">
+                    <label for="interestRate" class="fs-2-5">Property Tax: </label>
+                    <div class="flex align-items-center"><input id="propertyTaxInput" class="ml-2 flex-1" type="number"></input><span>%</span></div>
+                </div>
+                <div class="label-input my-3">
+                    <label for="interestRate" class="fs-2-5">Home Insurance: </label>
+                    <div class="flex align-items-center"><input id="homeInsuranceInput" class="ml-2 flex-1" type="number">/Yr.</input><span>%</span></div>
+                </div>
+                <div class="label-input my-3">
+                    <label for="interestRate" class="fs-2-5">Private Mortgage Insurance: </label>
+                    <div class="flex align-items-center"><input id="mortgageInsuranceInput" class="ml-2 flex-1" type="number"></input><span>%</span></div>
+                </div>
+                <div class="label-input my-3">
+                    <label for="interestRate" class="fs-2-5">Monthly HOA Fee: </label>
+                    <div class="flex align-items-center"><input id="hoaInput" class="ml-2 flex-1" type="number"></input><span>%</span></div>
+                </div>
             </div>
         </div>
-        <div id="monthlyPayment" class="flex justify-content-center">
-            <span id="result"></span>
+        
+        <div id="paymentBreakdown" class="px-4 py-2">
+            <div id="principalPlusInterest" class="flex justify-content-between breakdown-item"><span class="fs-2-5">Principal + Interest: </span><span id="principalPlusInterestValue" class="fs-2-5">$ 0</span></div>
+            <div id="propertyTax" class="flex justify-content-between breakdown-item"><span class="fs-2-5">Property Tax: </span><span id="propertyTaxValue" class="fs-2-5">$ 0</span></div>
+            <div id="homeInsurance" class="flex justify-content-between breakdown-item"><span class="fs-2-5">Home Insurance: </span><span id="homeInsuranceValue" class="fs-2-5">$ 0</span></div>
+            <div id="mortgageInsurance" class="flex justify-content-between breakdown-item"><span class="fs-2-5">PMI: </span><span id="mortgageInsuranceValue" class="fs-2-5">$ 0</span></div>
+            <div id="hoa" class="flex justify-content-between breakdown-item"><span class="fs-2-5">Monthly HOA Fee: </span><span id="hoaValue" class="fs-2-5">$ 0</span></div>
         </div>
-        <div id="paymentBreakdown" class="p-4">
-            <div id="principalPlusInterest" class="flex justify-content-between breakdown-item"><span>Principal + Interest: </span><span id="principalPlusInterestValue">$ 0</span></div>
-            <div id="propertyTax" class="flex justify-content-between breakdown-item"><span>Property Tax: </span><span id="propertyTaxValue">$ 0</span></div>
-            <div id="mortgageInsurance" class="flex justify-content-between breakdown-item"><span>PMI: </span><span id="mortgageInsuranceValue">$ 0</span></div>
+        <div id="monthlyPayment" class="">
+            <div class="first-bg-plate">
+                <div class="rhombus step2 flex justify-content-center align-items-center"><div id="result" class="mr-5"></div>                
+            </div>
         </div>
     </div>
     <script src="app.js"></script>  

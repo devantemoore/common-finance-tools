@@ -1,21 +1,34 @@
 *{
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Oswold', sans-serif;
     color:rgb(40, 40, 40);
     --main-primary: rgb(0, 100, 255);
+
+    --main-bg-color: rgb(245,245,245);
+
     --main-font-color: rgb(40, 40, 40);
     --secondary-font-color: rgb(255, 255, 255)
+}
+body{
+    margin: 0;
+    background-color: var(--main-bg-color);
+    padding-bottom: calc(100vh - 90vh);
 }
 #mortgage-calculator{
     display: flex;
     flex-direction: column;
+    margin: 8px;
 }
 #mortgage-calculator>.label-input{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
 }
 #mortgage-calculator>#paymentBreakdown{
-    /* background-color: cyan; */
+    background-color: lightgray;
+    border-radius: 20px;
+    border: 1px solid black;
 }
 #mortgage-calculator>#paymentBreakdown>.breakdown-item{
     border-bottom: 1px solid rgb(40, 40, 40);;
@@ -30,24 +43,52 @@
     z-index: -1;
 }
 #mortgage-calculator>#additionalOptions>#additionalOptionsList.is-active{
-    height: 195px;
+    height: 295px;
     opacity: 1;
     z-index: 1;
 }
+#result{
+    transform: skewX(45deg);
+    font-weight:600;
+    font-size: x-large;
+}
+
+#hamburger{
+    font-size: 1.3rem;
+    color: white;
+    transform: rotate(90deg);
+}
+
+#monthlyPayment{
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+#monthlyPayment>.first-bg-plate{
+    /* transform: rotate(-45deg); */
+    position: relative;
+    left: 10rem;
+}
+
 input, select{
     padding: 0.5rem 0.3rem;
-    border: 1px solid rgb(194, 194, 194);
+    border: 0;
+    border-bottom: 1px solid black;  
     border-radius: 5px;
+    background-color: inherit;
+    font-size: 1rem;
+    font-weight: 100;
 }
 input#downPayment{
     flex: 1;
+    border-right: 1px solid;
 }
 input#homePrice{
-    flex: 1;
-    border: 0;
-    border-bottom: 1px solid black;    
+    flex: 1;  
 }
-input#homePrice:focus{
+input:focus, select:focus{
     outline: none;
     border-bottom: 1px solid var(--main-primary);
 }
@@ -68,13 +109,17 @@ button.btn.btn-primary{
     color: var(--secondary-font-color)
 }
 button.dropdown{
-    background-color: white;
+    background-color: inherit;
     border: 0;
     color: var(--main-primary);
-    font:900;
-    font-size: 1rem;
+    font-weight:400;
+    font-size: 0.8rem;
     padding: 0;
     margin-right: 25px;
+}
+
+.navbar{
+    background-color: black;
 }
 
 
@@ -91,14 +136,23 @@ button.dropdown{
 .flex.justify-content-center{
     justify-content: center;
 }
+.flex.justify-content-end{
+    justify-content: flex-end;
+}
 .flex.align-items-center{
     align-items: center;
+}
+.flex.align-self-end{
+    align-self: flex-end;
 }
 .flex-1{
     flex: 1;
 }
 
 /* margin */
+.m-0{
+    margin: 0;
+}
 .m-1{
     margin: 0.25rem;
 }
@@ -186,6 +240,9 @@ button.dropdown{
 }
 
 /* padding */
+.p-0{
+    padding: 0;
+}
 .p-1{
     padding: 0.25rem;
 }
@@ -272,12 +329,35 @@ button.dropdown{
     padding-bottom: 4rem;
 }
 
+/* Font Size */
+.fs-1{
+    font-size: 0.25rem;
+}
+.fs-2{
+    font-size: 0.5rem;
+}
+.fs-2-5{
+    font-size: 0.75rem;
+}
+.fs-3{
+    font-size: 1rem;
+}
+.fs-3-5{
+    font-size: 1.5rem;
+}
+.fs-4{
+    font-size: 2rem;
+}
+.fs-5{
+    font-size: 4rem;
+}
+
 /* Icons */
 .icon{
     position: absolute;
     text-align: center;
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     margin: 0 10px;
 }
 .icon.icon-chevron-down{
@@ -300,3 +380,13 @@ button.dropdown{
     transform: rotate(45deg);
     transition: all 0.4s ease;
 }
+
+
+/* rhombus */
+.rhombus {
+    background: #CCC;
+    border: 1px solid #000;
+    width: 18rem;
+    height: 3rem;
+    transform: skewX(-45deg);
+  }

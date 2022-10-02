@@ -6,15 +6,19 @@ const additionalOptionsButton = document.querySelector('#additionalOptionsButton
 const additionalOptionsList = document.querySelector('#additionalOptionsList')
 const chevron = document.querySelector('.icon.icon-chevron-down')
 const downPayment = document.getElementById("downPayment")
-const hoa = document.querySelector('#hoaValue')
+const hoaInput = document.querySelector('#hoaInput')
+const hoaValue = document.querySelector('#hoaValue')
 const homeInsurance = document.querySelector('#homeInsuranceInput')
+const homeInsuranceValue = document.querySelector('#homeInsuranceValue')
 const homePrice = document.getElementById("homePrice")
 const interestRate = document.getElementById("interestRate")
 const loanDuration = document.getElementById("loanDuration")
 const percentage = document.querySelector('#percentage')
-const pmi = document.querySelector('#mortgageInsuranceValue')
-const propertyTax = document.querySelector('#propertyTaxValue')
-const result = document.querySelector('#monthlyPayment>#result')
+const pmi = document.querySelector('#mortgageInsuranceInput')
+const pmiValue = document.querySelector('#mortgageInsuranceValue')
+const propertyTaxInput = document.querySelector('#propertyTaxInput')
+const propertyTaxValue = document.querySelector('#propertyTaxValue')
+const result = document.querySelector('#monthlyPayment>.first-bg-plate>.rhombus.step2>#result')
 
 
 
@@ -26,7 +30,7 @@ downPayment.addEventListener('change', function() {
     percentage.value = ((downPayment.value / homePrice.value) * 100).toFixed(1);
     calculate();
 })
-hoa.addEventListener('change', function(){
+hoaInput.addEventListener('change', function(){
     calculate();
 })
 homeInsurance.addEventListener('change', function(){
@@ -49,7 +53,7 @@ percentage.addEventListener('change', function(){
 pmi.addEventListener('change', function(){
     calculate();
 })
-propertyTax.addEventListener('change', function(){
+propertyTaxInput.addEventListener('change', function(){
     calculate();
 })
 
@@ -74,15 +78,19 @@ function calculate() {
     }
 
 
-    var displayCalculation = document.getElementById("principalPlusInterestValue")
+    var principalPlusInterestValue = document.getElementById("principalPlusInterestValue")
     // Monthly Payment = Principal * [ (i/12mo)(i + 1)^LD]/[(1 + i)^n - 1]
     let monthlyInterest = (interestRate.value/100)/12
     let loanDurationInMonths = loanDuration.value*12
     let loanAmount = homePrice.value - downPayment.value
     var principalPlusInterest = loanAmount * ((monthlyInterest*(monthlyInterest + 1)**loanDurationInMonths)/((monthlyInterest + 1)**(loanDurationInMonths) - 1));
-    result.innerText = "$ " + currencyFormat((principalPlusInterest + (((propertyTax.value/100)/12)*homePrice.value) + (homeInsurance.value/12) + (pmi.value/12) + (hoa.value/1)).toFixed(2));
-    displayCalculation.innerText = currencyFormat(principalPlusInterest.toFixed(2))
-    //console.log(principalPlusInterest.toFixed(2))
+    result.innerText = currencyFormat((principalPlusInterest + (((propertyTaxInput.value/100)/12)*homePrice.value) + (homeInsurance.value/12) + (pmi.value/12) + (hoaInput.value*1)).toFixed(2));
+    principalPlusInterestValue.innerText = currencyFormat(principalPlusInterest.toFixed(2))
+    propertyTaxValue.innerText = currencyFormat((((propertyTaxInput.value/100)/12)*homePrice.value).toFixed(2))
+    pmiValue.innerText = currencyFormat((pmi.value/12).toFixed(2))
+    homeInsuranceValue.innerText = currencyFormat((homeInsurance.value/12).toFixed(2))
+    hoaValue.innerText = currencyFormat((hoaInput.value*1).toFixed(2))
+    //console.log(hoaInput.value)
 }
 
 function currencyFormat(number){
@@ -91,23 +99,23 @@ function currencyFormat(number){
     let numberOfDigits = formattedNumber.length - 3; //subtract ".00"
     let numberOfCommas = Math.floor(numberOfDigits / 3);
     numberOfCommas = numberOfDigits % 3 == 0 ? numberOfCommas - 1 : numberOfCommas; // comma may not be necessary
-    if (numberOfDigits <= 3) return number;
+    if (numberOfDigits <= 3) return '$' + number;
     switch (numberOfCommas){
         case 0:
-            return formattedNumber.join('');
+            return '$' + formattedNumber.join('');
         case 1:
             formattedNumber.splice(1, 0, ',');
-            return formattedNumber.join('');
+            return '$' + formattedNumber.join('');
             
         case 2:
             formattedNumber.splice(1, 0, ',')
             formattedNumber.splice(5, 0, ',')
-            return formattedNumber.join('');
+            return '$' + formattedNumber.join('');
         case 3:
             formattedNumber.splice(1, 0, ',')
             formattedNumber.splice(5, 0, ',')
             formattedNumber.splice(5, 0, ',')
-            return formattedNumber.join('');
+            return '$' + formattedNumber.join('');
         default:
             return;
     }
@@ -116,12 +124,13 @@ function currencyFormat(number){
 function setDefaultValues(){
     homePrice.defaultValue = 300000;
     downPayment.defaultValue = 60000;
+    percentage.defaultValue = 20;
     interestRate.defaultValue = 6.02; // set to national average
     loanDuration.defaultValue = 30;
 
     //additional options
-    propertyTax.defaultValue = 0;
+    propertyTaxInput.defaultValue = 0;
     homeInsurance.defaultValue = 0;
     pmi.defaultValue = 0;
-    hoa.defaultValue = 0;
+    hoaInput.defaultValue = 0;
 }
