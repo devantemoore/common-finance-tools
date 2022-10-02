@@ -129,8 +129,8 @@ function setDefaultValues(){
     loanDuration.defaultValue = 30;
 
     //additional options
-    propertyTaxInput.defaultValue = 0;
-    homeInsurance.defaultValue = 0;
-    pmi.defaultValue = 0;
-    hoaInput.defaultValue = 0;
+    propertyTaxInput.defaultValue = 1.5;
+    homeInsurance.defaultValue = 1400;
+    pmi.defaultValue = 0.0007*300000;
+    hoaInput.defaultValue = 50;
 }
