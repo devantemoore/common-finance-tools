@@ -8,31 +8,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&family=PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/src/assets/css/style.css" />
     <title>Common Financial Tools</title>
 </head>
 <body>
     <div class="flex justify-content-end navbar p-3">
         <div id="hamburger" class="p-0">|||</div>
         <div id="menu" class="">
-            <div class="menu-item">Home</div>
-            <div class="menu-item">Investment Calculator</div>
-            <div class="menu-item">Mortgage Calculator</div>
-            <div class="menu-item">Salary Calculator</div>            
+            <div class="menu-item" onclick="show(event, 'home')">Home</div>
+            <div class="menu-item" onclick="show(event, 'investment')">Investment Calculator</div>
+            <div class="menu-item another" onclick="show(event, 'mortgage-calculator')">Mortgage Calculator</div>
+            <div class="menu-item" onclick="show(event, 'salary')">Salary Calculator</div>            
         </div>
     </div>
     <div id="home" class="flex flex-column align-items-center justify-conent-around">
-        <div class="card">
-            <div>cool icon pic</div>
-            <div>Investment Calculator</div>
+        <div class="card flex flex-column align-items-center justify-conent-around">
+            <div class="card-img"><img src="/src//assets//img//chart-646.svg""></div>
+            <div class="card-label">Investment Calculator</div>
         </div>
-        <div class="card">
-            <div>cool icon pic</div>
-            <div>Mortgage Calculator</div>
+        <div class="card flex flex-column align-items-center justify-conent-around" onclick="show(event, 'mortgage-calculator')">
+            <div class="card-img"><img src="/src//assets//img//home-2490.svg""></div>
+            <div class="card-label">Mortgage Calculator</div>
         </div>
-        <div class="card">
-            <div>cool icon pic</div>
-            <div>Salary Calculator</div>
+        <div class="card flex flex-column align-items-center justify-conent-around">
+            <div class="card-img"><img src="/src//assets//img//circular-black-pie-chart-and-dollar-sign-15700.svg""></div>
+            <div class="card-label">Salary Calculator</div>
         </div>
     </div>
     <div id="mortgage-calculator">
@@ -95,6 +95,6 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>  
+    <script src="/src//assets//js//app.js"></script>  
 </body>
 </html>

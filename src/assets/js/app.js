@@ -1,5 +1,8 @@
-console.log("hello from app.js")
-
+document.addEventListener("DOMContentLoaded", function(event) {
+    // Your code to run since DOM is loaded and ready
+    
+    show(null, 'home');
+});
 // wrap in initializer function? document.ready
 
 const additionalOptionsButton = document.querySelector('#additionalOptionsButton')
@@ -138,4 +141,15 @@ function setDefaultValues(){
     homeInsurance.defaultValue = 1400;
     pmi.defaultValue = 0.0007*300000;
     hoaInput.defaultValue = 50;
+}
+
+function show(event, page){
+    if(event?.target.classList[0] == "menu-item") menu.classList.toggle("active") //TODO: decouple
+    
+    document.getElementById("home").classList.add("hide")
+    // document.getElementById("investment").classList.add("hide")
+    document.getElementById("mortgage-calculator").classList.add("hide")
+    // document.getElementById("salary").classList.add("hide")
+
+    document.getElementById(page).classList.remove("hide")
 }
