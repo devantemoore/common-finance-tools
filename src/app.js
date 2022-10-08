@@ -6,6 +6,7 @@ const additionalOptionsButton = document.querySelector('#additionalOptionsButton
 const additionalOptionsList = document.querySelector('#additionalOptionsList')
 const chevron = document.querySelector('.icon.icon-chevron-down')
 const downPayment = document.getElementById("downPayment")
+const hamburger = document.getElementById("hamburger")
 const hoaInput = document.querySelector('#hoaInput')
 const hoaValue = document.querySelector('#hoaValue')
 const homeInsurance = document.querySelector('#homeInsuranceInput')
@@ -13,6 +14,7 @@ const homeInsuranceValue = document.querySelector('#homeInsuranceValue')
 const homePrice = document.getElementById("homePrice")
 const interestRate = document.getElementById("interestRate")
 const loanDuration = document.getElementById("loanDuration")
+const menu = document.getElementById("menu")
 const percentage = document.querySelector('#percentage')
 const pmi = document.querySelector('#mortgageInsuranceInput')
 const pmiValue = document.querySelector('#mortgageInsuranceValue')
@@ -29,6 +31,9 @@ additionalOptionsButton.addEventListener('click', function(){
 downPayment.addEventListener('change', function() {
     percentage.value = ((downPayment.value / homePrice.value) * 100).toFixed(1);
     calculate();
+})
+hamburger.addEventListener('click', function(){
+    menu.classList.toggle("active")
 })
 hoaInput.addEventListener('change', function(){
     calculate();
