@@ -1,22 +1,20 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { computed } from 'vue'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
+import Header from '@/components/Header.vue'
+
+const route = useRoute();
+const currentView = computed(() => route.name)
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <VLayout>
+    <Header v-if="currentView !== 'home'" />
+    <VMain>
+      <RouterView></RouterView>
+    </VMain>    
+  </VLayout>
+  
 </template>
 
 <style scoped>
