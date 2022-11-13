@@ -49,6 +49,7 @@ body{
 #home{
   background-color: #385F73;
   height: calc(100vh);
+  padding-top: 15%;
 }
 #home>.hero{
   

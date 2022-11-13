@@ -88,6 +88,10 @@ const router = useRouter();
   margin:0 auto;
   height: 30%;
 }
+.main{
+  padding-right: 5%;
+  padding-left: 5%;
+}
 .overlay-primary{
   z-index: 2;
   background-color: #385F73;
