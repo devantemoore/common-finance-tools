@@ -34,7 +34,7 @@ a,
 
 *{
   font-family: 'Oswold', sans-serif;
-  color:rgb(72, 72, 72);
+  color:rgb(255, 255, 255);
   --main-primary: rgb(0, 100, 255);
 
   --main-bg-color: rgb(245,245,245);
@@ -47,7 +47,7 @@ body{
   background-color: var(--main-bg-color);
 }
 #home{
-  background-color: rgb(239, 239, 239);
+  background-color: #385F73;
   height: calc(100vh);
 }
 #home>.hero{

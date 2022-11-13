@@ -27,26 +27,18 @@ const router = useRouter();
         <div class="overlay-primary"></div>
         <img src="@/assets/img/circular-black-pie-chart-and-dollar-sign-15700.gif" id="hero-background-img" />
       </div>
-      <hr/>
-      <div class="main">
+      <div class="main pt-3">
           <v-row class="py-3">
             <v-col cols="12">
               <v-card
-                color="#dcdcdc"
+                color="#385F73"
                 theme="light"
-                border=true
                 elevation="22"
                 density="compact"
               >
-                <v-card-title class="text-h5">
-                    Invest.
-                </v-card-title>
-
-                <v-card-text>See what planting a seed today can potentially yield in the future.</v-card-text>
-
-                <v-card-actions>
+                <v-card-actions style="justify-content:center;">
                   <v-btn variant="text" @click="router.push('invest')">
-                    Calculate Now
+                    <v-icon class="pr-3" icon="mdi-chart-areaspline"></v-icon> Investment
                   </v-btn>
                 </v-card-actions>
               </v-card>
@@ -55,21 +47,15 @@ const router = useRouter();
         <v-row dense class="py-3">
             <v-col cols="12">
               <v-card
-                color="#dcdcdc"
+                color="#385F73"
                 theme="dark"
                 border=true
                 elevation="22"
                 density="compact"
               >
-                <v-card-title class="text-h5">
-                    Mortgage.
-                </v-card-title>
-
-                <v-card-text>Ever wondered how much house you can afford? Try out this mortgage calculator.</v-card-text>
-
-                <v-card-actions>
+                <v-card-actions style="justify-content:center;">
                   <v-btn variant="text" @click="router.push('mortgage')">
-                    Calculate Now
+                    <v-icon class="pr-3" icon="mdi-home"></v-icon> Mortgage
                   </v-btn>
                 </v-card-actions>
               </v-card>
@@ -78,21 +64,15 @@ const router = useRouter();
         <v-row dense class="py-3">
             <v-col cols="12">
               <v-card
-                color="#dcdcdc"
+                color="#385F73"
                 theme="dark"
                 border=true
                 elevation="22"
                 density="compact"
               >
-                <v-card-title class="text-h5">
-                    Income.
-                </v-card-title>
-
-                <v-card-text>Easily discover what your estimated take-home pay is by utilizing this salary tool.</v-card-text>
-
-                <v-card-actions>
+                <v-card-actions style="justify-content:center;">
                   <v-btn variant="text" @click="router.push('salary')">
-                    Calculate Now
+                    <v-icon class="pr-3" icon="mdi-cash-multiple"></v-icon> Salary
                   </v-btn>
                 </v-card-actions>
               </v-card>
