@@ -23,13 +23,16 @@ const router = useRouter();
     </div>
    </div> -->
    <v-container id="home">
-      <div class="hero"></div>
+      <div class="hero">
+        <div class="overlay-primary"></div>
+        <img src="@/assets/img/circular-black-pie-chart-and-dollar-sign-15700.gif" id="hero-background-img" />
+      </div>
       <hr/>
       <div class="main">
           <v-row class="py-3">
             <v-col cols="12">
               <v-card
-                color="#385F73"
+                color="#dcdcdc"
                 theme="light"
                 border=true
                 elevation="22"
@@ -39,10 +42,10 @@ const router = useRouter();
                     Invest.
                 </v-card-title>
 
-                <v-card-text>See what planting a seed today can potentially yeild you in the future.</v-card-text>
+                <v-card-text>See what planting a seed today can potentially yield in the future.</v-card-text>
 
                 <v-card-actions>
-                  <v-btn variant="text">
+                  <v-btn variant="text" @click="router.push('invest')">
                     Calculate Now
                   </v-btn>
                 </v-card-actions>
@@ -52,7 +55,7 @@ const router = useRouter();
         <v-row dense class="py-3">
             <v-col cols="12">
               <v-card
-                color="#385F73"
+                color="#dcdcdc"
                 theme="dark"
                 border=true
                 elevation="22"
@@ -65,7 +68,7 @@ const router = useRouter();
                 <v-card-text>Ever wondered how much house you can afford? Try out this mortgage calculator.</v-card-text>
 
                 <v-card-actions>
-                  <v-btn variant="text">
+                  <v-btn variant="text" @click="router.push('mortgage')">
                     Calculate Now
                   </v-btn>
                 </v-card-actions>
@@ -75,7 +78,7 @@ const router = useRouter();
         <v-row dense class="py-3">
             <v-col cols="12">
               <v-card
-                color="#385F73"
+                color="#dcdcdc"
                 theme="dark"
                 border=true
                 elevation="22"
@@ -88,7 +91,7 @@ const router = useRouter();
                 <v-card-text>Easily discover what your estimated take-home pay is by utilizing this salary tool.</v-card-text>
 
                 <v-card-actions>
-                  <v-btn variant="text">
+                  <v-btn variant="text" @click="router.push('salary')">
                     Calculate Now
                   </v-btn>
                 </v-card-actions>
@@ -98,3 +101,26 @@ const router = useRouter();
       </div>
     </v-container>
 </template>
+
+<style lang="css">
+.hero{
+  width:100%;
+  margin:0 auto;
+  height: 30%;
+}
+.overlay-primary{
+  z-index: 2;
+  background-color: #385F73;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+}
+#hero-background-img{
+  object-fit:cover;
+  width:100%;
+  max-height:100%;
+  position:absolute;
+  top:0;
+  opacity: .4;
+}
+</style>

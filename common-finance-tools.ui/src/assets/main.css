@@ -34,7 +34,7 @@ a,
 
 *{
   font-family: 'Oswold', sans-serif;
-  color:rgb(40, 40, 40);
+  color:rgb(72, 72, 72);
   --main-primary: rgb(0, 100, 255);
 
   --main-bg-color: rgb(245,245,245);
@@ -47,12 +47,11 @@ body{
   background-color: var(--main-bg-color);
 }
 #home{
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(239, 239, 239);
   height: calc(100vh);
 }
 #home>.hero{
-  width: 300px;
-  height: 30%;
+  
   /* border: rgba(255,255,255,0.5) solid 1px;
   box-shadow: 3px 3px 10px white,
               -3px -3px 10px white; */
@@ -62,7 +61,7 @@ body{
   height: 50px;
 }
 #home>.card>.card-label{
-  color:white;
+  color:rgb(0, 0, 0);
 }
 #mortgage-calculator{
   display: flex;
